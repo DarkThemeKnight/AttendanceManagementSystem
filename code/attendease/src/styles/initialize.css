@@ -1,0 +1,24 @@
+.initialize {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.codes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.code {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+div.initialize div.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(251, 130, 97, 0.3);
+}

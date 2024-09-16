@@ -1,0 +1,29 @@
+div.react-calendar {
+  width: 100%;
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px var(--primary-color);
+}
+.react-calendar button {
+  color: var(--primary-color);
+}
+div .react-calendar__tile--now {
+  background-color: var(--bg-color);
+}
+div .react-calendar__tile--active,
+div .react-calendar__tile:hover {
+  background: var(--secondary-color);
+  color: var(--bg-color);
+}
+div .react-calendar__tile--active:enabled:hover,
+div .react-calendar__tile--active:enabled:focus {
+  background: var(--secondary-color);
+  color: var(--bg-color);
+}
+div .react-calendar__navigation button:enabled:hover {
+  background: var(--bg-color);
+}
+div .react-calendar__navigation button:disabled {
+  background: var(--bg-color);
+}

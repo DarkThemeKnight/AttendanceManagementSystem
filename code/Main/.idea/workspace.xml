@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a956fae-1bf2-47f6-9005-6b7d4b9b4b14" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/csv-editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/BenchMarkTests.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/face_recognition/stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/Observation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_100/loginTimes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_100/stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_200/loginTimes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_200/stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_30/loginTimes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_30/stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_50/loginTimes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/login/concurrentUsers_50/stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/uploadImage/Observation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/uploadImage/statistics_+30_concurrent_users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/uploadImage/statistics_100_concurrent_users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/uploadImage/statistics_200_concurrent_users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/csvFiles/uploadImage/statistics_50_concurrent_users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/hold" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/DataPersistenceApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/RunOnStartup/StudentUploadImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/RunOnStartup/TestLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/constants/AttendanceStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/constants/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/ApplicationUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/AttendanceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/AuthenticationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/AuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/java/demo/api/Data/Persistence/Api/dto/SubjectResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/src/test/java/demo/api/Data/Persistence/Api/DataPersistenceApiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/DataPersistenceApiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/RunOnStartup/TestLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/ServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/constants/AttendanceStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/constants/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/ApplicationUser$ApplicationUserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/ApplicationUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AttendanceService$AttendanceRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AttendanceService$AttendanceResponse$MetaData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AttendanceService$AttendanceResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AttendanceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AuthenticationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/AuthenticationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/Response.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/SubjectResponse$Metadata$MetadataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/SubjectResponse$Metadata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/SubjectResponse$SubjectResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/classes/demo/api/Data/Persistence/Api/dto/SubjectResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BenchMarkTests/target/test-classes/demo/api/Data/Persistence/Api/DataPersistenceApiApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ImageProcessingService/api/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ImageProcessingService/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ImageProcessingService/api/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/attendance_service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/attendance_service/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authentication_service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authentication_service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/lecturer_service/LecturerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/lecturer_service/LecturerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/student_service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/student_service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/super_admin/SuperUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/super_admin/SuperUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/face_recognition_service/FaceRecognitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/face_recognition_service/FaceRecognitionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/FaceRecognitionApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/ServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/constants/AttendanceStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/constants/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/AuthenticationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/General.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/ImagesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/LecturerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/ProfilePictureController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/controller/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/ApplicationUser$ApplicationUserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/ApplicationUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Attendance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/AttendanceRecord$AttendanceRecordBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/AttendanceRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/AttendanceSetupPolicy$AttendanceSetupPolicyBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/AttendanceSetupPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/EncodedImages$EncodedImagesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/EncodedImages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/ProfilePicture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/ResetPasswordToken$ResetPasswordTokenBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/ResetPasswordToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Schedule$ScheduleBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Schedule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Student$StudentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Subject$SubjectBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/entities/Suspension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/helper/InitializeBeans.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/helper/Utility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/ApplicationUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/AttendanceRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/AttendanceSetupPolicyRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/EncodedImagesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/NotificationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/ProfilePictureRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/ResetPasswordTokenSaltRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/ScheduleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/StudentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/SubjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/repository/SuspensionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/security/JwtAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/security/SecurityBeans.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/security/SecurityFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/application_user/ApplicationUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/attendance_service/AttendanceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/authentication_service/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/authorization_service/admin/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/authorization_service/lecturer_service/LecturerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/authorization_service/student_service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/authorization_service/super_admin/SuperUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/extras/ProfilePictureService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/extras/ScheduleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/face_recognition_service/FaceRecognitionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/image_request_service/EncodingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/jwt_service/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/mail/MailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/scheduledTasks/AutomatedActions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/services/subject/SubjectService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AttendanceRecordResponse$MetaData$MetaDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AttendanceRecordResponse$MetaData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AttendanceRecordResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AttendanceStatsDTO$AttendanceStatsDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AttendanceStatsDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AvailableRecords$Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/AvailableRecords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/EncodeImageListResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/EncodeImageRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/EncodedImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/EncodedImageResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/FaceRecognitionEndpoints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/GetListOfUsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/InitializeAttendance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/InitializeAttendanceResponse$InitializeAttendanceResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/InitializeAttendanceResponse$Metadata$MetadataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/InitializeAttendanceResponse$Metadata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/InitializeAttendanceResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ListOfSubjects$ListOfSubjectsBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ListOfSubjects$MetaData$MetaDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ListOfSubjects$MetaData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ListOfSubjects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/NotificationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/NotificationResponse$CustomData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/NotificationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ResetPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/Response.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ScheduleSetupRequest$CustomRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ScheduleSetupRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ScheduleSetupResponse$CustomRequest$CustomRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ScheduleSetupResponse$CustomRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/ScheduleSetupResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentAttendanceRecordResponse$DefaultResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentAttendanceRecordResponse$StudentAttendanceRecordResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentAttendanceRecordResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile$Course$CourseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile$Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile$StudentData$StudentDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile$StudentData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile$StudentProfileBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/StudentProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/UniqueCodeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/application_user/ApplicationUserRequest$ApplicationUserRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/application_user/ApplicationUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/authentication/AuthenticationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/authentication/AuthenticationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/history/AttendanceRecordHistoryResponse$AttendanceRecordHistoryResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/history/AttendanceRecordHistoryResponse$MetaData$MetaDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/history/AttendanceRecordHistoryResponse$MetaData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/history/AttendanceRecordHistoryResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/student/StudentRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/student/StudentResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/AllSubjects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/AllSubjectsNoStudentData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/SubjectRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/SubjectResponse$Metadata$MetadataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/SubjectResponse$Metadata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/SubjectResponse$SubjectResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/FaceRecognition/utils/subject/SubjectResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../attendease/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../attendease/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../attendease/Dockerfile" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2mAcyJE86paFmgmv6uEk7IxZOVr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a956fae-1bf2-47f6-9005-6b7d4b9b4b14" name="Changes" comment="" />
+      <created>1726523075368</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726523075368</updated>
+    </task>
+    <servers />
+  </component>
+</project>

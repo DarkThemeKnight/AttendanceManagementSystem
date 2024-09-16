@@ -1,0 +1,66 @@
+/* .student {
+  display: flex;
+  align-items: center;
+  /* height: 80vh; 
+} */
+
+.student form {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+.student fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: none;
+}
+.student .image {
+  width: 300px;
+  height: 300px;
+  /* background-color: aliceblue; */
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  align-self: center;
+  overflow: hidden;
+}
+.student .image img {
+  width: 100%;
+  min-width: 300px;
+}
+.student label {
+  display: flex;
+  font-size: 1.1rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+}
+.student label input {
+  display: none;
+}
+.student button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.modal .card {
+  max-width: 550px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  height: 200px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.modal .card button {
+  align-self: flex-end;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

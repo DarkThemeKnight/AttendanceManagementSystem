@@ -1,0 +1,72 @@
+.form {
+  width: 100%;
+  min-height: 85vh;
+  background-color: rgba(0, 50, 102, 0.3);
+  display: flex;
+}
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  gap: 8px;
+  width: 24px;
+  height: 24px;
+}
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+}
+.radio label {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  min-width: 100px;
+  border-radius: 4px;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}

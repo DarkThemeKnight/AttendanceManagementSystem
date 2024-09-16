@@ -1,0 +1,32 @@
+.menus {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 20px;
+}
+.menus ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+ul li {
+  flex: 1;
+  border-right: 1px solid var(--primary-color);
+  text-align: center;
+}
+ul li:hover {
+  background-color: var(--card-bg);
+}
+ul li:last-child {
+  border-right: none;
+}
+ul li a {
+  padding: 20px;
+  display: block;
+}
+.menus a.active {
+  background-color: var(--card-bg);
+}
