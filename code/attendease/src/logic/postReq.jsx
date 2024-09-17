@@ -1,6 +1,3 @@
-const fetch = require('node-fetch');
-const https = require('https');
-
 const postReq = (
   userId,
   password,
@@ -18,18 +15,12 @@ const postReq = (
     setJwtToken(token); // Update the state with the new token
   }
 
-  // Create an HTTPS agent with rejectUnauthorized set to false
-  const agent = new https.Agent({
-    rejectUnauthorized: false,
-  });
-
   fetch(`${BASE}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ id: userId, password, role: category }),
-    agent: agent, // Use the agent with fetch
   })
     .then((response) => {
       if (!response.ok) {
@@ -74,5 +65,4 @@ const postReq = (
     });
 };
 
-module.exports = postReq;
-
+export default postReq;
