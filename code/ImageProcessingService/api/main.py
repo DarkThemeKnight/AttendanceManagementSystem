@@ -47,7 +47,7 @@ async def recognize_face(subject_id: str = Query(..., title="Subject Id"), file:
         
         # Send request to the endpoint to get student encodings for this subject id
         # response = requests.get("http://main_app:8080/api/v1/encodings?code=" + subject_id)
-        response = requests.get("https://localhost:8080/api/v1/encodings?code=" + subject_id, verify=False)
+        response = requests.get("http://localhost:8080/api/v1/encodings?code=" + subject_id, verify=False)
         response.raise_for_status()  # Raise HTTPError for bad status codes
         
         val = response.json()
