@@ -49,14 +49,20 @@ const AttendanceSheet = ({ students, setSortID }) => {
           </tr>
         </thead>
         <tbody>
-          {filteredStudents.map((student, index) => (
-            <tr key={`${student.id}${index}`}>
-              <td>{index + 1}</td>
-              <td>{student.firstname + " " + student.lastname}</td>
-              <td>{student.matriculationNumber}</td>
-              <td>{student.status}</td>
+          {filteredStudents.length > 0 ? (
+            filteredStudents.map((student, index) => (
+              <tr key={`${student.id}${index}`}>
+                <td>{index + 1}</td>
+                <td>{student.firstname + " " + student.lastname}</td>
+                <td>{student.matriculationNumber}</td>
+                <td>{student.status}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4">No records found</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </section>

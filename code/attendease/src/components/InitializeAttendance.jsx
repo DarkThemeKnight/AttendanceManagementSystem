@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import "../styles/initialize.css";
 
-const BASE = "http://192.168.43.218/api/v1";
-
-const InitializeAttendance = ({ handleClose }) => {
+const InitializeAttendance = ({ handleClose, BASE }) => {
   const [duration, setDuration] = useState(0);
   const [subjectCode, setSubjectCode] = useState("");
   const [courses, setCourses] = useState([]);
@@ -26,7 +24,7 @@ const InitializeAttendance = ({ handleClose }) => {
     };
 
     getCourses();
-  }, [token]);
+  }, [token, BASE]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

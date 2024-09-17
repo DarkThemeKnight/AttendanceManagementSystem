@@ -3,7 +3,7 @@ import "../styles/form.css";
 import { useNavigate } from "react-router-dom";
 import postReq from "../logic/postReq";
 
-const Form = ({ setJwtToken }) => {
+const Form = ({ setJwtToken, BASE }) => {
   const [category, setCategory] = useState("lecturer");
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -16,8 +16,10 @@ const Form = ({ setJwtToken }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("sumitting...");
+
     setError("");
-    postReq(userId, password, category, navigate, setError, setJwtToken); // Pass setJwtToken function
+    postReq(userId, password, category, navigate, setError, setJwtToken, BASE); // Pass setJwtToken function
   };
 
   return (
@@ -33,6 +35,7 @@ const Form = ({ setJwtToken }) => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
             required
+            autoComplete="on"
             placeholder="Enter your id"
           />
           <label htmlFor="password">Password:</label>
@@ -43,6 +46,7 @@ const Form = ({ setJwtToken }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            autoComplete="on"
             placeholder="Enter your password"
           />
           <fieldset className="radio">

@@ -6,10 +6,11 @@ import useFetch from "../hooks/useFetch";
 const Students = ({ BASE }) => {
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
-  const [subjectCode, setSubjectCode] = useState("MAT101");
+  const [subjectCode, setSubjectCode] = useState("");
   const navigate = useNavigate();
   const { token } = useFetch();
 
+  // Fetch the students when the subjectCode changes
   useEffect(() => {
     const getStudents = async () => {
       await fetch(`${BASE}/attendance?subjectCode=${subjectCode}`, {
@@ -25,13 +26,16 @@ const Students = ({ BASE }) => {
         });
     };
 
-    getStudents();
+    if (subjectCode) {
+      getStudents();
+    }
   }, [token, subjectCode, BASE]);
 
   const handleClick = () => {
     navigate("./add");
   };
 
+  // Handle suspending the student
   const handleSuspend = async (studentId, suspend) => {
     await fetch(
       `${BASE}/attendance/suspend?subjectCode=${subjectCode}&studentId=${studentId}&suspend=${suspend}`,
@@ -55,7 +59,6 @@ const Students = ({ BASE }) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setStudents((prevStudents) =>
           prevStudents.map((student) =>
             student.studentId === studentId
@@ -69,6 +72,7 @@ const Students = ({ BASE }) => {
       });
   };
 
+  // Fetch the courses and set the default subjectCode
   useEffect(() => {
     const getCourses = async () => {
       await fetch(`${BASE}/attendance/mySubjects`, {
@@ -78,6 +82,10 @@ const Students = ({ BASE }) => {
         .then((response) => response.json())
         .then((data) => {
           setCourses(data.data);
+          // Set the subjectCode to the first course subjectId if available
+          if (data.data.length > 0 && !subjectCode) {
+            setSubjectCode(data.data[0].subjectId);
+          }
         })
         .catch((error) => {
           console.error("Failed to fetch courses:", error);
@@ -85,7 +93,7 @@ const Students = ({ BASE }) => {
     };
 
     getCourses();
-  }, [token, BASE]);
+  }, [token, BASE, subjectCode]);
 
   return (
     <div className="layout">

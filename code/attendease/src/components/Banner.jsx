@@ -13,7 +13,6 @@ const Banner = ({ BASE }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setInfo(data);
         })
         .catch((error) => {

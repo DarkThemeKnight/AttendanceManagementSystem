@@ -15,7 +15,7 @@ const MainContent = ({ BASE }) => {
       </div>
       <div className="left layout">
         <MyCalendar />
-        {isLecturer && <Initialize />}
+        {isLecturer && <Initialize BASE={BASE} />}
       </div>
     </div>
   );

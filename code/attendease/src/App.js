@@ -19,8 +19,9 @@ import Courses from "./pages/Courses";
 import AddCourse from "./components/AddCourse";
 import Student from "./pages/Student";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import AttendancePage from "./pages/AttendancePage";
 
-const BASE = "http://192.168.43.218:8080/api/v1";
+const BASE = "https://192.168.148.136:8080/api/v1";
 
 function App() {
   const [jwtToken, setJwtToken] = useState(localStorage.getItem("jwtToken"));
@@ -54,13 +55,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header jwtToken={jwtToken} />
+        <Header jwtToken={jwtToken} BASE={BASE} />
         <Routes>
           <Route
             path="/login"
             element={
               isTokenExpired ? (
-                <Login setJwtToken={setJwtToken} />
+                <Login setJwtToken={setJwtToken} BASE={BASE} />
+              ) : userRole === "ROLE_STUDENT" ? (
+                <Navigate to="/student" /> // Ensure student is redirected here
               ) : (
                 <Navigate to="/" />
               )
@@ -75,6 +78,7 @@ function App() {
                   "ROLE_SUPER_ADMIN",
                   "ROLE_LECTURER",
                   "ROLE_ADMIN",
+                  "ROLE_STUDENT",
                 ]}
                 userRole={userRole}
               />
@@ -164,8 +168,18 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/student"
+              element={
+                <ProtectedRoutes
+                  element={<Student BASE={BASE} />}
+                  allowedRoles={["ROLE_STUDENT"]}
+                  userRole={userRole}
+                />
+              }
+            />
+            <Route path="/capture" element={<AttendancePage BASE={BASE} />} />
           </Route>
-          <Route path="/student" element={<Student BASE={BASE} />} />
         </Routes>
       </Router>
     </div>

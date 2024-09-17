@@ -7,7 +7,7 @@ const Attendance = ({ BASE }) => {
   const [sheetDisplayed, setSheetDisplayed] = useState(false);
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
-  const [subjectCode, setSubjectCode] = useState("MAT101");
+  const [subjectCode, setSubjectCode] = useState("");
   const [sortId, setSortId] = useState(0);
   const [date, setDate] = useState("");
   const [allDates, setAllDates] = useState([]);
@@ -21,8 +21,10 @@ const Attendance = ({ BASE }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          // setSubjectCode(data.data.subjectId);
           setCourses(data.data);
+          if (data.data.length > 0 && !subjectCode) {
+            setSubjectCode(data.data[0].subjectId);
+          }
         })
         .catch((error) => {
           console.error("Failed to fetch courses:", error);
@@ -30,7 +32,7 @@ const Attendance = ({ BASE }) => {
     };
 
     getCourses();
-  }, [token, BASE]);
+  }, [token, BASE, subjectCode]);
 
   useEffect(() => {
     const getDates = async () => {
@@ -41,17 +43,27 @@ const Attendance = ({ BASE }) => {
           headers: { Authorization: `Bearer ${token}` },
         }
       )
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.status !== 200) {
+            setDate(new Date().toISOString().slice(0, 10));
+            throw new Error("Failed to fetch  dates, No attendance for today");
+          }
+          return response.json();
+        })
         .then((data) => {
           setAllDates(data.data);
-          setDate(data.data[0].date);
+
+          data.data.length > 0
+            ? setDate(data.data[0].date)
+            : setDate(new Date().toISOString().slice(0, 10));
         })
         .catch((error) => {
           console.error("Failed to fetch lecturers:", error);
         });
     };
-
-    getDates();
+    if (subjectCode) {
+      getDates();
+    }
   }, [token, subjectCode, BASE]);
 
   useEffect(() => {
@@ -127,11 +139,15 @@ const Attendance = ({ BASE }) => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
           >
-            {allDates.map((date, index) => (
-              <option value={date.date} key={`${date}${index}`}>
-                {date.date}
-              </option>
-            ))}
+            {allDates.length > 0 ? (
+              allDates.map((date, index) => (
+                <option value={date.date} key={`${date}${index}`}>
+                  {date.date}
+                </option>
+              ))
+            ) : (
+              <option value={date}>{date}</option>
+            )}
           </select>
         </label>
         <button onClick={handleClick}>Generate Sheet</button>

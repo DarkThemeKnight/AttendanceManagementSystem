@@ -20,14 +20,18 @@ const Menus = () => {
   return (
     <section className="menus">
       <ul>
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Home
-          </NavLink>
-        </li>
+        {(role.includes("ROLE_SUPER_ADMIN") ||
+          role.includes("ROLE_ADMIN") ||
+          role.includes("ROLE_LECTURER")) && (
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+          </li>
+        )}
         {(role.includes("ROLE_SUPER_ADMIN") || role.includes("ROLE_ADMIN")) && (
           <>
             <li>
@@ -64,6 +68,26 @@ const Menus = () => {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Students
+              </NavLink>
+            </li>
+          </>
+        )}
+        {role.includes("ROLE_STUDENT") && (
+          <>
+            <li>
+              <NavLink
+                to="/student"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/capture"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Capture
               </NavLink>
             </li>
           </>

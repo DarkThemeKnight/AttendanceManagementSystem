@@ -46,7 +46,7 @@ const Navigation = ({ handleClose, BASE, jwtToken }) => {
           <Link onClick={handleChange}>Change Password</Link>
         </li>
       </ul>
-      {showForm && <Reset handleClose={handleClose} />}
+      {showForm && <Reset handleClose={handleClose} BASE={BASE} />}
     </div>
   );
 };

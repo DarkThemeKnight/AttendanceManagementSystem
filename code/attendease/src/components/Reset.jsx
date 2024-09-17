@@ -3,9 +3,7 @@ import useFetch from "../hooks/useFetch";
 import "../styles/initialize.css";
 import Modal from "./Modal";
 
-const BASE = "http://192.168.43.218/api/v1";
-
-const Reset = ({ handleClose }) => {
+const Reset = ({ handleClose, BASE }) => {
   const [old, setOld] = useState("");
   const [newP, setNewP] = useState("");
   const [error, setError] = useState(null);
@@ -15,6 +13,8 @@ const Reset = ({ handleClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(BASE);
+
     await fetch(`${BASE}/auth/updatePassword`, {
       method: "PUT",
       headers: {
@@ -54,7 +54,6 @@ const Reset = ({ handleClose }) => {
             id="old"
             name="old"
             value={old}
-            min={10}
             required
             placeholder="Enter your old password"
             onChange={(e) => setOld(e.target.value)}
@@ -66,7 +65,7 @@ const Reset = ({ handleClose }) => {
             id="duration"
             name="duration"
             value={newP}
-            min={10}
+            min={8}
             required
             placeholder="Enter new password"
             onChange={(e) => setNewP(e.target.value)}

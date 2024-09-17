@@ -41,7 +41,8 @@ const Header = ({ jwtToken, BASE }) => {
   };
   useEffect(() => {
     setIsLoggedIn(!!jwtToken);
-  }, [jwtToken]);
+    console.log(BASE);
+  }, [jwtToken, BASE]);
 
   return (
     <header>

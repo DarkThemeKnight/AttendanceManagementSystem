@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import InitializeAttendance from "./InitializeAttendance";
 
-const Initialize = () => {
+const Initialize = ({ BASE }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
@@ -36,7 +36,7 @@ const Initialize = () => {
       <button className="initialize-btn" onClick={handleClick}>
         Initialize New Attendance
       </button>
-      {isOpen && <InitializeAttendance handleClose={handleClose} />}
+      {isOpen && <InitializeAttendance handleClose={handleClose} BASE={BASE} />}
     </div>
   );
 };
