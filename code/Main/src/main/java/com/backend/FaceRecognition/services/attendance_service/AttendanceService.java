@@ -180,30 +180,6 @@ public class AttendanceService {
         return new ResponseEntity<>("code=" + setup.getCode(), HttpStatus.OK);
     }
 
-    @SneakyThrows
-    public ResponseEntity<String> updateAttendanceStatus(String attendanceCode, String studentId, AttendanceStatus status) {
-        log.info("Updating attendance status: attendanceCode={}, studentId={}, status={}", attendanceCode, studentId, status);
-        // Check if the attendance setup policy exists
-        Optional<AttendanceSetupPolicy> attendanceSetup = attendanceSetupRepository.findById(attendanceCode);
-        if (attendanceSetup.isEmpty()) {
-            log.warn("Attendance setup policy not found for code: {}", attendanceCode);
-            return ResponseEntity.badRequest().body("Attendance is not initialized yet");
-        }
-        var policy = attendanceSetup.get();
-        // Find the attendance record for the student
-        Attendance attendance = attendanceRepository.findByStudentIdAndSubjectIdAndDate(studentId, policy.getSubjectId(), policy.getAttendanceDate());
-        if (attendance == null) {
-            log.warn("Attendance record not found for studentId: {}, subjectId: {}, date: {}", studentId, policy.getSubjectId(), policy.getAttendanceDate());
-            return ResponseEntity.badRequest().body("Attendance record not found");
-        }
-        // Update the attendance status
-        attendance.setStatus(status);
-        attendanceRepository.save(attendance);
-        // Convert response to JSON string
-        String responseBody = objectMapper.writeValueAsString(new Response("Success"));
-        log.info("Attendance status updated successfully for studentId: {}, attendanceCode: {}", studentId, attendanceCode);
-        return ResponseEntity.ok(responseBody);
-    }
 
 
     public ResponseEntity<String> updateAttendanceStatus(String attendanceCode, MultipartFile multipartFile) {
@@ -301,6 +277,7 @@ public class AttendanceService {
         switch (sort) {
             case 1 -> studentAttendance = filterAttendanceByStatus(studentAttendance, AttendanceStatus.PRESENT);
             case 2 -> studentAttendance = filterAttendanceByStatus(studentAttendance, AttendanceStatus.ABSENT);
+            case 0 -> {}
             default -> {
                 log.warn("Invalid sort parameter: {}", sort);
                 return ResponseEntity.badRequest().build();
