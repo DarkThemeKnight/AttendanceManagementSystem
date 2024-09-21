@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-242.22855.74">
+    <data-source name="attendance_management_system_face_recognition_db@localhost" uuid="89e5b154-4c52-4742-a0a7-a32b46c908b0">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>david</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

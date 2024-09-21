@@ -1,0 +1,13 @@
+install gcc with -> sudo apt install gcc
+install cmake with -> sudo apt install cmake
+install git with -> sudo apt install git
+install v-env -> sudo apt install python3.12-venv
+install pip -> sudo apt install python3-pip
+create your venv -> python -m venv venv
+launch the venv -> source venv/bin/activate
+install build -> pip install build
+install dlib -> pip install dlib
+install requirements.txt files -> pip install -r requirements.txt
+
+
+
