@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a956fae-1bf2-47f6-9005-6b7d4b9b4b14" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authentication_service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authentication_service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/lecturer_service/LecturerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/FaceRecognition/services/authorization_service/lecturer_service/LecturerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <workItem from="1726947979672" duration="1734000" />
       <workItem from="1728305276962" duration="635000" />
       <workItem from="1728310150178" duration="599000" />
-      <workItem from="1728384808272" duration="5033000" />
+      <workItem from="1728384808272" duration="5554000" />
     </task>
     <servers />
   </component>

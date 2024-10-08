@@ -310,11 +310,8 @@ public class AuthenticationService {
                 sb.append(response.getBody().getMessage()).append("\n");
             }
         }
-
         return ResponseEntity.ok(new Response(sb.toString()));
     }
-
-
     public static String validateInput(String id, String firstname, String lastname, String email, String phoneNumber) {
         StringBuilder validationMessage = new StringBuilder();
 

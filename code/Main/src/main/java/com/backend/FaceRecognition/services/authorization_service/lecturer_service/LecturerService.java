@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -336,7 +337,7 @@ public class LecturerService {
         List<String> validationErrors = new ArrayList<>();
         List<String> successfulAdds = new ArrayList<>();
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getResource().getFile()))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split(",");
@@ -360,7 +361,6 @@ public class LecturerService {
         }catch (Exception ex) {
             return ResponseEntity.badRequest().body(new Response("Error Processing file: " + ex.getMessage()));
         }
-        // Prepare final response
         StringBuilder responseMessage = new StringBuilder();
         if (!successfulAdds.isEmpty()) {
             responseMessage.append(String.join("\n", successfulAdds)).append("\n");
