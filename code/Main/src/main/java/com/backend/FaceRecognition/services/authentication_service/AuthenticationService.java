@@ -4,6 +4,7 @@ import com.backend.FaceRecognition.constants.Role;
 import com.backend.FaceRecognition.entities.ApplicationUser;
 import com.backend.FaceRecognition.entities.ResetPasswordToken;
 import com.backend.FaceRecognition.entities.Student;
+import com.backend.FaceRecognition.helper.Utility;
 import com.backend.FaceRecognition.repository.ResetPasswordTokenSaltRepository;
 import com.backend.FaceRecognition.services.application_user.ApplicationUserService;
 import com.backend.FaceRecognition.services.authorization_service.student_service.StudentService;
@@ -19,9 +20,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.regex.Pattern;
 
 @Service
 @Slf4j
@@ -57,7 +63,7 @@ public class AuthenticationService {
 
                 if (requestUserOpt.isEmpty() || !requestUserOpt.get().getUserRole().contains(Role.ROLE_SUPER_ADMIN)) {
                     log.warn("Unauthorized attempt to register admin by user with ID: {}", id);
-                    yield new ResponseEntity<>(new Response(), HttpStatus.UNAUTHORIZED);
+                    yield new ResponseEntity<>(new Response("Unauthorized to Register user with id-> "+applicationUser.getId()), HttpStatus.UNAUTHORIZED);
                 }
 
                 user.setUserRole(Set.of(Role.ROLE_ADMIN));
@@ -237,4 +243,121 @@ public class AuthenticationService {
         }
         return ResponseEntity.ok(new Response("User does not exist"));
     }
+
+    public ResponseEntity<Response> register(MultipartFile file, String token) {
+        String filename = file.getOriginalFilename();
+        if (filename == null) {
+            return ResponseEntity.badRequest().body(new Response("Filename is null"));
+        }
+        if (!filename.endsWith(".csv")) {
+            return ResponseEntity.badRequest().body(new Response("Filename is not a CSV file"));
+        }
+
+        List<ApplicationUserRequest> toRegister = new ArrayList<>();
+        List<String> validationErrors = new ArrayList<>();
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getResource().getFile()))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] tokens = line.split(",");
+                if (tokens.length < 6) {
+                    validationErrors.add("Insufficient data for line: " + line);
+                    continue; // Skip this line if not enough tokens
+                }
+
+                String id = tokens[0];
+                String firstname = tokens[1];
+                String lastname = tokens[2];
+                String email = tokens[3];
+                String phoneNumber = tokens[4];
+                String role = tokens[5];
+
+                String validationMessage = validateInput(id, firstname, lastname, email, phoneNumber);
+                if (!"Validation successful!".equals(validationMessage)) {
+                    validationErrors.add(validationMessage + " for user -> " + id + " " + firstname + " " + lastname + " " + email + " " + phoneNumber);
+                    continue; // Skip registration for this invalid entry
+                }
+
+                ApplicationUserRequest applicationUserRequest = ApplicationUserRequest.builder()
+                        .firstname(firstname)
+                        .lastname(lastname)
+                        .phoneNumber(phoneNumber)
+                        .schoolEmail(email)
+                        .id(id)
+                        .role(role)
+                        .build();
+
+                ApplicationUser applicationUser = applicationUserService.findUser(id).orElse(null);
+                if (applicationUser == null) {
+                    toRegister.add(applicationUserRequest);
+                }
+            }
+        } catch (IOException ex) {
+            return ResponseEntity.badRequest().body(new Response("Error Processing file: " + ex.getMessage()));
+        }
+
+        // If there were any validation errors, return them
+        if (!validationErrors.isEmpty()) {
+            return ResponseEntity.badRequest().body(new Response(String.join("\n", validationErrors)));
+        }
+
+        // Process registration
+        StringBuilder sb = new StringBuilder();
+        for (ApplicationUserRequest applicationUserRequest : toRegister) {
+            ResponseEntity<Response> response = register(applicationUserRequest, token);
+            if (!response.getStatusCode().is2xxSuccessful()) {
+                sb.append(response.getBody().getMessage()).append("\n");
+            }
+        }
+
+        return ResponseEntity.ok(new Response(sb.toString()));
+    }
+
+
+    public static String validateInput(String id, String firstname, String lastname, String email, String phoneNumber) {
+        StringBuilder validationMessage = new StringBuilder();
+
+        // Validate ID
+        if (id == null || !isAlphanumeric(id) || (id.length() < 9 || id.length() > 11)) {
+            validationMessage.append("ID must be 10-11 alphanumeric characters.\n");
+        }
+
+        // Validate First Name
+        if (firstname == null || firstname.trim().isEmpty()) {
+            validationMessage.append("First name must be non-null and non-empty.\n");
+        }
+
+        // Validate Last Name
+        if (lastname == null || lastname.trim().isEmpty()) {
+            validationMessage.append("Last name must be non-null and non-empty.\n");
+        }
+
+        // Validate Email
+        if (email == null || !isValidEmail(email)) {
+            validationMessage.append("Email must be non-null and in a valid format.\n");
+        }
+
+        // Validate Phone Number
+        if (phoneNumber == null || !isValidPhoneNumber(phoneNumber)) {
+            validationMessage.append("Phone number must be non-null and exactly 11 digits.\n");
+        }
+
+        return validationMessage.length() == 0 ? "Validation successful!" : validationMessage.toString();
+    }
+
+    private static boolean isAlphanumeric(String str) {
+        return str.matches("[a-zA-Z0-9]+");
+    }
+
+    private static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        return Pattern.compile(emailRegex).matcher(email).matches();
+    }
+
+    private static boolean isValidPhoneNumber(String phoneNumber) {
+        return phoneNumber.matches("\\d{11}");
+    }
+
+
+
 }

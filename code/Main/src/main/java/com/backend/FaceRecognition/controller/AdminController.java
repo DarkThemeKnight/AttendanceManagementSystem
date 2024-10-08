@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
@@ -78,7 +79,16 @@ public class AdminController {
         log.info("Register User {}",applicationUser);
         return authenticationService.register(applicationUser, token);
     }
-    @PostMapping("/set-to-admin")
+    @PostMapping("/register/bulk")
+    public ResponseEntity<Response> addStudentImage(@RequestParam("file") MultipartFile file, @RequestHeader("Authorization") String token){
+        log.info("Register User in bulk");
+        return authenticationService.register(file, token);
+    }
+
+
+
+
+                                                    @PostMapping("/set-to-admin")
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     public ResponseEntity<Response> setToAdmin(@RequestParam String id) {
         return superUserService.setToAdmin(id);

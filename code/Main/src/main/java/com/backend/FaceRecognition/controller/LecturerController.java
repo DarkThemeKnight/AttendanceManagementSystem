@@ -13,6 +13,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
@@ -94,6 +95,13 @@ public class LecturerController {
             @RequestHeader("Authorization") String bearer) {
         return lecturerService.addStudentToSubject(bearer, studentId, subjectCode);
     }
+    @PostMapping("/add/bulk")
+    public ResponseEntity<Response> addStudentToSubject(
+            @RequestParam MultipartFile file,
+            @RequestHeader("Authorization") String bearer) {
+        return lecturerService.addStudentToSubject(bearer, file);
+    }
+
     private ResponseEntity<Response> build(ResponseEntity<String> response) {
         return new ResponseEntity<>(new Response(response.getBody()), response.getStatusCode());
     }

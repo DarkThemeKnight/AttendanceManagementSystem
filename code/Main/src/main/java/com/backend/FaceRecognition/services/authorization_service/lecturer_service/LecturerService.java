@@ -20,7 +20,11 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -262,7 +266,7 @@ public class LecturerService {
 
         if (cantPerformOperation(auth, subject)) {
             log.warn("Unauthorized access attempt to add student to subject: {}", subjectCode);
-            return new ResponseEntity<>(new Response("Unauthorized"), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(new Response("Unauthorized to add student of id => "+studentId+" to subject "+subjectCode+" NOT Lecturer of this course"), HttpStatus.UNAUTHORIZED);
         }
 
         // Step 2: Fetch student details
@@ -319,4 +323,53 @@ public class LecturerService {
         log.info("Returning list of subjects for lecturer ID: {}", id);
         return ResponseEntity.ok(listOfSubjects);
     }
+
+    @Transactional
+    public ResponseEntity<Response> addStudentToSubject(String bearer, MultipartFile file) {
+        String filename = file.getOriginalFilename();
+        if (filename == null) {
+            return ResponseEntity.badRequest().body(new Response("Filename is null"));
+        }
+        if (!filename.endsWith(".csv")) {
+            return ResponseEntity.badRequest().body(new Response("Filename is not a CSV file"));
+        }
+        List<String> validationErrors = new ArrayList<>();
+        List<String> successfulAdds = new ArrayList<>();
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getResource().getFile()))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] tokens = line.split(",");
+                if (tokens.length != 2) { // Expecting [studentId, subjectCode]
+                    validationErrors.add("Invalid number of tokens in line: " + line);
+                    continue; // Skip this line if not enough tokens
+                }
+                String studentId = tokens[0];
+                String subjectCode = tokens[1];
+                // Attempt to add the student to the subject
+                ResponseEntity<Response> response = addStudentToSubject(bearer, studentId, subjectCode);
+                if (!response.getStatusCode().is2xxSuccessful()) {
+                    validationErrors.add("Failed to add student: " + studentId + " to subject: " + subjectCode + ". Reason: " + response.getBody().getMessage());
+                } else {
+                    successfulAdds.add("Successfully added student: " + studentId + " to subject: " + subjectCode);
+                }
+            }
+        } catch (IOException ex) {
+            log.error("Error processing file", ex);
+            return ResponseEntity.badRequest().body(new Response("Error Processing file: " + ex.getMessage()));
+        }catch (Exception ex) {
+            return ResponseEntity.badRequest().body(new Response("Error Processing file: " + ex.getMessage()));
+        }
+        // Prepare final response
+        StringBuilder responseMessage = new StringBuilder();
+        if (!successfulAdds.isEmpty()) {
+            responseMessage.append(String.join("\n", successfulAdds)).append("\n");
+        }
+        if (!validationErrors.isEmpty()) {
+            responseMessage.append("Errors occurred:\n").append(String.join("\n", validationErrors));
+        }
+        return ResponseEntity.ok(new Response(responseMessage.toString()));
+    }
+
+
 }
