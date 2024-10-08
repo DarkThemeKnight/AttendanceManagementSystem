@@ -80,15 +80,12 @@ public class AdminController {
         return authenticationService.register(applicationUser, token);
     }
     @PostMapping("/register/bulk")
-    public ResponseEntity<Response> addStudentImage(@RequestParam("file") MultipartFile file, @RequestHeader("Authorization") String token){
+    public ResponseEntity<Response> addStudentImage(@RequestParam("file") MultipartFile file,
+                                                    @RequestHeader("Authorization") String token){
         log.info("Register User in bulk");
         return authenticationService.register(file, token);
     }
-
-
-
-
-                                                    @PostMapping("/set-to-admin")
+    @PostMapping("/set-to-admin")
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     public ResponseEntity<Response> setToAdmin(@RequestParam String id) {
         return superUserService.setToAdmin(id);

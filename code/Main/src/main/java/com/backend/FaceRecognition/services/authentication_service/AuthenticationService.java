@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -246,6 +247,7 @@ public class AuthenticationService {
 
     public ResponseEntity<Response> register(MultipartFile file, String token) {
         String filename = file.getOriginalFilename();
+        log.info("Filename {}",filename);
         if (filename == null) {
             return ResponseEntity.badRequest().body(new Response("Filename is null"));
         }
@@ -256,7 +258,7 @@ public class AuthenticationService {
         List<ApplicationUserRequest> toRegister = new ArrayList<>();
         List<String> validationErrors = new ArrayList<>();
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getResource().getFile()))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split(",");
@@ -264,7 +266,6 @@ public class AuthenticationService {
                     validationErrors.add("Insufficient data for line: " + line);
                     continue; // Skip this line if not enough tokens
                 }
-
                 String id = tokens[0];
                 String firstname = tokens[1];
                 String lastname = tokens[2];
@@ -293,6 +294,7 @@ public class AuthenticationService {
                 }
             }
         } catch (IOException ex) {
+            log.error("Error ",ex);
             return ResponseEntity.badRequest().body(new Response("Error Processing file: " + ex.getMessage()));
         }
 
@@ -300,7 +302,6 @@ public class AuthenticationService {
         if (!validationErrors.isEmpty()) {
             return ResponseEntity.badRequest().body(new Response(String.join("\n", validationErrors)));
         }
-
         // Process registration
         StringBuilder sb = new StringBuilder();
         for (ApplicationUserRequest applicationUserRequest : toRegister) {
@@ -318,7 +319,9 @@ public class AuthenticationService {
         StringBuilder validationMessage = new StringBuilder();
 
         // Validate ID
-        if (id == null || !isAlphanumeric(id) || (id.length() < 9 || id.length() > 11)) {
+        if (id == null  || (id.length() < 10 || id.length() > 11)) {
+            assert id != null;
+            log.info("Id Length {}",id.length());
             validationMessage.append("ID must be 10-11 alphanumeric characters.\n");
         }
 
