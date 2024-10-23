@@ -7,32 +7,86 @@ const Students = ({ BASE }) => {
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
   const [subjectCode, setSubjectCode] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [showBulk, setShowBulk] = useState(false);
+  const [csvFile, setCsvFile] = useState(null);
+  const [csvFileName, setCsvFileName] = useState(""); // State to hold file name
   const navigate = useNavigate();
   const { token } = useFetch();
 
-  // Fetch the students when the subjectCode changes
-  useEffect(() => {
-    const getStudents = async () => {
-      await fetch(`${BASE}/attendance?subjectCode=${subjectCode}`, {
-        mode: "cors",
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setStudents(data.students);
-        })
-        .catch((error) => {
-          console.error("Failed to fetch students:", error);
-        });
-    };
+  // Moved the getStudents function out of useEffect
+  const getStudents = async () => {
+    if (!subjectCode) return;
 
-    if (subjectCode) {
-      getStudents();
-    }
+    await fetch(`${BASE}/attendance?subjectCode=${subjectCode}`, {
+      mode: "cors",
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setStudents(data.students);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch students:", error);
+      });
+  };
+
+  // Fetch students when the subjectCode changes
+  useEffect(() => {
+    getStudents();
   }, [token, subjectCode, BASE]);
 
   const handleClick = () => {
+    setShowModal(true);
+    setShowBulk(false);
+  };
+
+  const handleSingleStudentClick = () => {
+    setShowModal(false);
     navigate("./add");
+  };
+
+  const handleBulkStudentClick = () => {
+    setShowBulk(true);
+  };
+
+  const handleCsvFileChange = (e) => {
+    const file = e.target.files[0];
+    setCsvFile(file);
+    setCsvFileName(file ? file.name : ""); // Set the file name when a file is chosen
+  };
+
+  // Updated handleCsvUpload to call getStudents after successful upload
+  const handleCsvUpload = async () => {
+    if (!csvFile) return alert("Please upload a CSV file.");
+
+    const formData = new FormData();
+    formData.append("file", csvFile);
+
+    await fetch(`${BASE}/attendance/add/bulk`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("CSV file uploaded successfully.");
+          return response.json();
+        } else {
+          alert("Failed to upload CSV file.");
+        }
+      })
+      .then((data) => {
+        console.log(data);
+        setCsvFileName("");
+        setShowModal(false);
+
+        // Call getStudents after successful CSV upload
+        getStudents();
+      })
+      .catch((error) => {
+        console.error("Failed to upload CSV file:", error);
+      });
   };
 
   // Handle suspending the student
@@ -116,6 +170,58 @@ const Students = ({ BASE }) => {
         <button onClick={handleClick}>Add Student</button>
       </div>
       <StudentsList students={students} handleSuspend={handleSuspend} />
+
+      {/* Modal for adding user options */}
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            {!showBulk && (
+              <>
+                <h3>Select an option</h3>
+                <button
+                  className="modal-btn"
+                  onClick={handleSingleStudentClick}
+                >
+                  Add Single Student
+                </button>
+                <button className="modal-btn" onClick={handleBulkStudentClick}>
+                  Bulk Upload CSV
+                </button>
+              </>
+            )}
+
+            {showBulk && (
+              <div className="csv-upload">
+                <p>
+                  <strong>Required CSV Format:</strong>
+                  <br />
+                  <code>id,firstname,lastname,email,phoneNumber,role</code>
+                </p>
+                <input
+                  type="file"
+                  accept=".csv"
+                  onChange={handleCsvFileChange}
+                  style={{ display: csvFileName ? "none" : "block" }}
+                />
+                {csvFileName && <p>File selected: {csvFileName}</p>}
+                <button className="upload-btn" onClick={handleCsvUpload}>
+                  Upload CSV
+                </button>
+              </div>
+            )}
+            <button
+              className="close-modal"
+              onClick={() => {
+                setShowModal(false);
+                setShowBulk(false);
+                setCsvFileName("");
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

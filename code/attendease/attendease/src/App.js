@@ -21,7 +21,7 @@ import Student from "./pages/Student";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import AttendancePage from "./pages/AttendancePage";
 
-const BASE = "http://192.168.148.136:8080/api/v1";
+const BASE = "http://localhost:8080/api/v1";
 
 function App() {
   const [jwtToken, setJwtToken] = useState(localStorage.getItem("jwtToken"));

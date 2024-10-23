@@ -8,3 +8,85 @@ main .add {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Modal styling */
+.modal {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 48px 32px;
+  border-radius: 10px;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.modal-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.csv-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.csv-upload input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.upload-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.close-modal {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  right: 10px;
+  top: 10px;
+}
+
+.close-modal:hover {
+  border: 1px solid white;
+}
